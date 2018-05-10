@@ -12,6 +12,10 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 
+// AUTH
+import { AuthService } from './services/auth.service';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
 // ANIMATION
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -29,6 +33,7 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { NavbarPageComponent } from './components/navbar-page/navbar-page.component';
 import { LogedPageComponent } from './components/loged-page/loged-page.component';
+
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -55,10 +60,12 @@ const routes: Routes = [
     FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    AngularFireAuthModule
   ],
   providers: [
-    UserService
+    UserService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
