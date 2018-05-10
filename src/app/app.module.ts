@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 
 import { FormsModule } from '@angular/forms';
 
-import { RouterModule, Routes } from '@angular/router'
+import { RouterModule, Routes } from '@angular/router';
 
 // FIREBASE 
 import { AngularFireModule } from 'angularfire2'; 
