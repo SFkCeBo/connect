@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,8 @@ export class RegisterPageComponent implements OnInit {
 
   constructor(
     public authService: AuthService,
-    public toastr: ToastrService
+    public toastr: ToastrService,
+    public router: Router
   ) { }
 
   ngOnInit() {
@@ -25,10 +27,10 @@ export class RegisterPageComponent implements OnInit {
     this.authService.registerUser(this.email,this.pass)
     .then ((res)=>{
       this.toastr.success("Registro","Usuario Registrado!")
-      console.log(res);
+      this.router.navigate(['/']);
     }).catch((err)=>{
       this.toastr.error("Registro","Usuario mal registrado!")
-      console.log(err);
+      this.router.navigate(['/register']);
     })
   }
 
