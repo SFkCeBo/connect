@@ -21,6 +21,9 @@ import { AuthGuard } from './guards/auth.guard';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { FlashMessagesModule } from 'angular2-flash-messages';
+import { FlashMessagesService } from 'angular2-flash-messages';
+
 
 // COMPONENTS
 import { UsersComponent } from './components/users/users.component';
@@ -68,12 +71,14 @@ const routes: Routes = [
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot(routes),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FlashMessagesModule
   ],
   providers: [
     UserService,
     AuthService,
-    AuthGuard
+    AuthGuard,
+    FlashMessagesService
   ],
   bootstrap: [AppComponent]
 })

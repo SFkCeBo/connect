@@ -13,6 +13,8 @@ export class AuthService {
     public afAuth: AngularFireAuth
   ) { }
 
+
+
   registerUser(email:string,pass:string){
     return new Promise((resolve,reject)=>{
       this.afAuth.auth.createUserAndRetrieveDataWithEmailAndPassword(email,pass)
@@ -29,11 +31,13 @@ export class AuthService {
     })
   }
 
+  loginGoogle(){
+    return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider);
+  }
+
   getAuth(){
     return this.afAuth.authState.map( auth => auth );
   }
-
-
 
   logout(){
     return this.afAuth.auth.signOut();
