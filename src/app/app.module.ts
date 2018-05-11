@@ -18,7 +18,6 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthGuard } from './guards/auth.guard';
 
 // ANIMATION
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { FlashMessagesModule } from 'angular2-flash-messages';
