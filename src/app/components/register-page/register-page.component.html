@@ -1,8 +1,10 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-6 contenedor text-center">
-              <h1>Register</h1>
-              <form (submit)="onSubmitAddUser()">
+        <div class="col-md-6 contenedor ">
+                <div class="card">
+                        <div class="card-body">
+              <h1>REGISTRAR</h1>
+              <form (submit)="onSubmitAddUser()" class="text-center">
                 <div class="form-group">
                   <label for="email">Email</label>
                   <input type="email" name="email" id="email" [(ngModel)]="email" class="form-control">
@@ -44,6 +46,8 @@
                 <button type="submit" value="Registrar" class="btn btn-primary btn-block">
                 <i class="fas fa-plus-circle"></i> Registrar</button>
               </form>
+              </div>
+              </div>
         </div>
       </div>
 </div>

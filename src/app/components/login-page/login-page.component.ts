@@ -26,7 +26,7 @@ export class LoginPageComponent implements OnInit {
   onSumbitLog(){
     this.authService.loginEmail(this.email,this.password)
     .then((res)=>{
-      this.router.navigate(['/']);
+      this.router.navigate(['/privado']);
     }).catch((err)=>{
       this.toastr.error("Fallo Login","No has podido logearte");
       this.router.navigate(['/login']);

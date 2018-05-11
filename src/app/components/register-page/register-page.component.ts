@@ -27,7 +27,7 @@ export class RegisterPageComponent implements OnInit {
     this.authService.registerUser(this.email,this.pass)
     .then ((res)=>{
       this.toastr.success("Registro","Usuario Registrado!")
-      this.router.navigate(['/']);
+      this.router.navigate(['/privado']);
     }).catch((err)=>{
       this.toastr.error("Registro","Usuario mal registrado!")
       this.router.navigate(['/register']);

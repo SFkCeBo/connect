@@ -15,6 +15,7 @@ import { environment } from '../environments/environment';
 // AUTH
 import { AuthService } from './services/auth.service';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AuthGuard } from './guards/auth.guard';
 
 // ANIMATION
 
@@ -33,12 +34,16 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { NavbarPageComponent } from './components/navbar-page/navbar-page.component';
 import { LogedPageComponent } from './components/loged-page/loged-page.component';
+import { PrivatePageComponent } from './components/private-page/private-page.component';
+import { NotfoundPageComponent } from './components/notfound-page/notfound-page.component';
 
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'login', component: LoginPageComponent },
-  { path: 'register', component: RegisterPageComponent }
+  { path: 'register', component: RegisterPageComponent },
+  { path: 'privado' , component: PrivatePageComponent,canActivate:[AuthGuard]},
+  { path: '**', component: NotfoundPageComponent }
 ];
 
 @NgModule({
@@ -51,7 +56,9 @@ const routes: Routes = [
     LoginPageComponent,
     RegisterPageComponent,
     NavbarPageComponent,
-    LogedPageComponent
+    LogedPageComponent,
+    PrivatePageComponent,
+    NotfoundPageComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +72,8 @@ const routes: Routes = [
   ],
   providers: [
     UserService,
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
