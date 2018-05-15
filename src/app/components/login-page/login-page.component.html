@@ -1,18 +1,41 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-6 contenedor text-center">
-              <h1>Log IN</h1>
-              <form (submit)="onSumbitLog()">
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email" name="email" id="email" [(ngModel)]="email" class="form-control">
+        <div class="col-md-6 contenedor">
+            <div class="card">
+                <div class="card-body">
+                  <h1>LOG IN</h1>
+                  <form (submit)="onSumbitLog()" class ="text-center">
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" name="email" id="email" [(ngModel)]="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label for="password">Contraseña</label>
+                      <input type="password" name="password" [(ngModel)]="password" id="password" class="form-control">
+                    </div>
+                    <input type="submit" value="Enviar" class="btn btn-primary btn-block">
+                  </form>
                 </div>
-                <div class="form-group">
-                  <label for="password">Contraseña</label>
-                  <input type="password" name="password" [(ngModel)]="password" id="password" class="form-control">
-                </div>
-                <input type="submit" value="Enviar" class="btn btn-primary btn-block">
-              </form>
+              </div>
         </div>
       </div>
+</div>
+<div class="container">
+<div class="row">
+  <div class="col-md-6 mx-auto mt-2">
+    <div class="card">
+      <div class="card-body">
+        <button class="btn btn-lg btn-facebook" (click)="onClickFacebookLogin()">
+            <i class="fab fa-facebook-f"></i>  Facebook
+        </button>
+        <button class="btn btn-lg btn-google" (click)="onClickGoogleLogin()">
+          <i class="fab fa-google-plus-g"></i>  Google
+        </button>
+        <button class="btn btn-lg btn-twitter" (click)="onClickTwitterLogin()">
+            <i class="fab fa-twitter"></i>  Twitter
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 </div>

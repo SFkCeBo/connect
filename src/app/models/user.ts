@@ -1,5 +1,5 @@
 export class User {
-    $key:string;
+    $key:string
     mail:string;
     password:string;
     name?:string;

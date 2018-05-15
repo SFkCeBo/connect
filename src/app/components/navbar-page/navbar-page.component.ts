@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar-page',
@@ -10,10 +11,12 @@ export class NavbarPageComponent implements OnInit {
   public isLogin: boolean;
   public nombreUser: string;
   public emailUser: string;
+  public fotoUser:string;
 
 
   constructor(
-    public authService: AuthService
+    public authService: AuthService,
+    public router: Router
   ) { }
 
   ngOnInit() {
@@ -22,6 +25,7 @@ export class NavbarPageComponent implements OnInit {
         this.isLogin=true;
         this.nombreUser=auth.displayName;
         this.emailUser=auth.email;
+        this.fotoUser=auth.photoURL;
       }else{
         this.isLogin = false;
       }
@@ -30,6 +34,7 @@ export class NavbarPageComponent implements OnInit {
 
   onClickLogout(){
     this.authService.logout();
+    this.router.navigate(['/']);
   }
 
 }
