@@ -24,13 +24,24 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 import { FlashMessagesService } from 'angular2-flash-messages';
 
 
-// COMPONENTS
-import { UsersComponent } from './components/users/users.component';
-import { UsersListComponent } from './components/users/users-list/users-list.component';
-import { UserComponent } from './components/users/user/user.component';
 
 // SERVICES
 import { UserService } from './services/user.service';
+import { PublicacionService } from './services/publicacion.service';
+
+
+// COMPONENTS
+      //USER
+import { UsersComponent } from './components/users/users.component';
+import { UsersListComponent } from './components/users/users-list/users-list.component';
+import { UserComponent } from './components/users/user/user.component';
+     
+      //PUBLICACIONES
+import { PublicacionesComponent } from './components/publicaciones/publicaciones.component';
+import { PublicacionesListComponent } from './components/publicaciones/publicaciones-list/publicaciones-list.component';
+import { PublicacionComponent } from './components/publicaciones/publicacion/publicacion.component';
+
+      //PAGINAS
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
@@ -38,6 +49,7 @@ import { NavbarPageComponent } from './components/navbar-page/navbar-page.compon
 import { LogedPageComponent } from './components/loged-page/loged-page.component';
 import { PrivatePageComponent } from './components/private-page/private-page.component';
 import { NotfoundPageComponent } from './components/notfound-page/notfound-page.component';
+
 
 
 const routes: Routes = [
@@ -60,7 +72,10 @@ const routes: Routes = [
     NavbarPageComponent,
     LogedPageComponent,
     PrivatePageComponent,
-    NotfoundPageComponent
+    NotfoundPageComponent,
+    PublicacionesComponent,
+    PublicacionesListComponent,
+    PublicacionComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +92,8 @@ const routes: Routes = [
     UserService,
     AuthService,
     AuthGuard,
-    FlashMessagesService
+    FlashMessagesService,
+    PublicacionService
   ],
   bootstrap: [AppComponent]
 })

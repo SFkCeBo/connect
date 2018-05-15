@@ -18,22 +18,21 @@ export class UserService {
     return this.userList = this.firebase.list('users');
   }
 
-  insertUser(user: User){
+  insertUser(email:string,pass:string){
     this.userList.push({
-      $key:user.$key,
-      mail:user.mail,
-      password:user.password,
-      name:user.name,
-      cognom:user.cognom,
-      nacimiento:user.nacimiento,
-      pais:user.pais,
-      ciutat:user.ciutat,
-      direccio:user.direccio,
-      tipo:user.tipo,
-      publicacio:user.$key,
-      amigos:user.$key,
-      petamistad:user.$key,
-      cuentas:user.$key
+      mail:email,
+      password:pass,
+      name:"",
+      cognom:"",
+      nacimiento:"",
+      pais:"",
+      ciutat:"",
+      direccio:"",
+      tipo:"user",
+      publicacio:email,
+      amigos:email,
+      petamistad:email,
+      cuentas:email
     })
   }
 
